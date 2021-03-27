@@ -31,7 +31,7 @@ In most use cases the best way to install Python and scikit-learn package on you
                 	        specific your own trained model.
 
 
-# Usage for building your own models
+# Usage for building classification model
 
 	Command:
 		python train_model.py -p pHis.fa -n non_pHis.fa -o model.tsv -t proka
