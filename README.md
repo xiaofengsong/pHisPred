@@ -45,14 +45,23 @@ In most use cases the best way to install Python and scikit-learn package on you
 
 # Examples
 	
-	Predicting pHis sites with protein sequences or peptiede sequences centered by His site (> 31 amino acids)
+*    Predicting pHis sites with protein sequences or peptide sequences centered by His site
+    	
+	Commands:
 		python pHisPred.py -f examples/euka_proteins.fa -o euka_result.txt -t euka
 		python pHisPred.py -f examples/proka_proteins.fa -o proka_result.txt -t proka
 		python pHisPred.py -f examples/negatve.fa -o euka_result.txt -t euka
+	
+	Note: The length of peptide sequence should be 31 and 25 respectively for euka and proka.
 		
-	Predicting pHis sites with the model built on your own data 
+*    Predicting pHis sites with the model built on your own data 
+
+	Commands:
 		python train_model.py -p exampels/positive.fa -n examples/negative.fa -o euka_model.tsv -t euka
-		python pHisPred.py -f examples/euka_proteins.fa -o euka_result.txt -m euka_model.tsv
+		python pHisPred.py -f examples/euka_proteins.fa -o euka_result.txt -t euka -m euka_model.tsv
+	
+	Note: For training model, the input files should be peptide sequences centered by His site.
+	      The length of peptide sequence is better set to 31 and 25 respectively for euka and proka; if not, please use the parameter -w to specific the length.
 
 
 # Author
