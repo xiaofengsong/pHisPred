@@ -1,10 +1,6 @@
 # pHisPred
 A bioinformatic tool for identifying protein histidine phosphorylation sites
 
-# Introduction
-
-pHisPred is a python package for the identification of protein histidine phosphorylation sites.
-
 # Installation
 
 The following software should be installed in your cluster or computer before running the pHisPred.py.
@@ -45,6 +41,18 @@ In most use cases the best way to install Python and scikit-learn package on you
                 	            assign your output file.
 		-t class type, --type=class type
                 	            eukaryotes: euka (default); prokaryotes: proka.
+
+
+# Examples
+	
+	Predicting pHis sites with protein sequences or peptiede sequences centered by His site (> 31 amino acids)
+		python pHisPred.py -f examples/euka_proteins.fa -o euka_result.txt -t euka
+		python pHisPred.py -f examples/proka_proteins.fa -o proka_result.txt -t proka
+		python pHisPred.py -f examples/negatve.fa -o euka_result.txt -t euka
+		
+	Predicting pHis sites with the model built on your own data 
+		python train_model.py -p exampels/positive.fa -n examples/negative.fa -o euka_model.tsv -t euka
+		python pHisPred.py -f examples/euka_proteins.fa -o euka_result.txt -m euka_model.tsv
 
 
 # Author
